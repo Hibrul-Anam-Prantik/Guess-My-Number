@@ -24,5 +24,8 @@ document.querySelector('.check-btn').addEventListener('click', function () {
     document.querySelector('.msg').textContent = '📈 Too High!';
   else if (guessedNumber < secretNum)
     document.querySelector('.msg').textContent = '📉 Too Low!';
-  else document.querySelector('.msg').textContent = '🎉 BINGO!!';
+  else {
+    document.querySelector('.number').textContent = secretNum;
+    document.querySelector('.msg').textContent = '🎉 BINGO!!';
+  }
 });
