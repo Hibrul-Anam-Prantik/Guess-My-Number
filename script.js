@@ -15,8 +15,10 @@ const secretNum = Math.trunc(Math.random() * 20) + 1; // Generating random numbe
 //   else if (guessedNum < secretNum) console.log('📉 Too Low!');
 //   else console.log('🎉 Yep!! You got the Number!');
 // });
-let score = 20;
+let score = 20,
+  highScore = 0;
 document.querySelector('.score').textContent = score;
+document.querySelector('.hscore').textContent = highScore;
 
 document.querySelector('.check-btn').addEventListener('click', function () {
   const guessedNumber = Number(document.querySelector('.guess-number').value);
@@ -25,6 +27,8 @@ document.querySelector('.check-btn').addEventListener('click', function () {
     document.querySelector('.msg').textContent = '⛔ Enter a valid Number!';
   else if (guessedNumber === secretNum) {
     document.querySelector('.number').textContent = secretNum;
+    highScore = Math.max(highScore, score);
+    document.querySelector('.hscore').textContent = highScore;
     document.querySelector('.msg').textContent = '🎉 BINGO!!';
     document.querySelector('body').style.backgroundColor = '#058800ff';
     document.querySelector('.number').style.width = '30rem';
