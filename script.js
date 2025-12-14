@@ -38,6 +38,7 @@ document.querySelector('.check-btn').addEventListener('click', function () {
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.score').style.fontSize = '3rem';
     document.querySelector('.check-btn').disabled = true;
+    document.querySelector('.guess-number').disabled = true;
     return;
   } else {
     displayMessage(guessedNumber > secretNum ? '📈 Too High!' : '📉 Too Low!');
